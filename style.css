@@ -24,6 +24,10 @@
   padding: 10px 15px;
   margin-top: 7px;
 }
+h2{
+  color: red;
+  margin: 10%;
+}
 
 @media only screen and (max-width:800px) {
   /* For tablets: */
