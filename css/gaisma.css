@@ -138,7 +138,7 @@
     z-index: -1;
     left: 50%;
     transform: translateX(-50%);
-    -webkit-animation: fillTop 2s forwards 4s ease-in-out;
+    -webkit-animation: fillTop 2 s forwards 4s ease-in-out;
             animation: fillTop 2s forwards 4s ease-in-out;
   }
   .timeline__event__icon:after {
