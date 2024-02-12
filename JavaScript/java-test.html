@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>HTML Forms</h2>
+
+<button onclick="myFunction()">Nospiediet šo pogu</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var num = prompt("Ievadi skaitli", "0");
+  if (num != null) {
+    num = parseInt(num);
+    if (!isNaN(num)) {
+      document.getElementById("demo").innerHTML = "Skaitlis, kas ir par 5 lielāks: " + (num + 5);
+    } else {
+      document.getElementById("demo").innerHTML = "Lūdzu, ievadiet skaitli.";
+    }
+  }
+}
+</script>
+
+</body>
+</html>
