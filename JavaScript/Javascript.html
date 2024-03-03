@@ -1,0 +1,26 @@
+<button id="button">Player 1:Vārds</button>
+<style>
+    button {
+      font-family: "helvetica neue", helvetica, sans-serif;
+      letter-spacing: 1px;
+      background-color: darkred;
+      color: ivory;
+      box-shadow: 1px 1px 2px rgb(0 0 200 / 0.4);
+      border-radius: 10px;
+      padding: 3px 10px;
+      cursor: pointer;
+      padding: 10px;
+    }
+    </style>
+<script>
+    const button = document.querySelector("button");
+    
+    button.addEventListener
+    ("click", updateName);
+    
+    function updateName() {
+      const name = prompt("Enter a new name");
+      button.textContent = `Player 1:${name}`;
+    }
+    </script>
+        
