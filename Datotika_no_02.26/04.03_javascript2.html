@@ -1,0 +1,142 @@
+<html>
+<head>
+    <style>
+.row {
+display: flex;
+flex-wrap: wrap;
+padding: 0 4px;
+content: center;
+padding-left : 30%;
+justify-content: space-between;
+}
+    </style>
+
+</head>
+<body>
+
+    <u><p style="text-align: right; padding-right: 10%;">4.martā</p></u>
+ <h1 style="text-align: center;"> JavaScript programmēšanas- if/ else funkcijas </h1>
+
+ <div class="row"> 
+    <script>
+
+        let personas_Vards_Uzvards = "Anita Zāle";
+        let ikmeneša_ienākumi = 1000;
+
+        if ( ikmeneša_ienākumi >= 700)
+        {
+            document.write(personas_Vards_Uzvards + " " + "saņem atbilstošu atalgojumu (pie slodzes 1.0), pamatojoties uz Latvijas likumdošanu.")
+        }
+        else	{
+            document.write(personas_Vards_Uzvards + " " + "saņem neatbilstošu atalgojumu (pie slodzes 1.0), pamatojoties uz Latvijas likumdošanu. ")
+        }
+    </script>
+
+<br>
+------------------------
+<br>
+
+
+    <script>
+
+    
+    let norises_vieta = ", Rīgas Angļu ģimnāzijā,";
+    let datums_pasakumam = 27;
+
+    if ( datums_pasakumam == 27)
+    {
+        document.write("Popiela" + norises_vieta + " norisināsies š.g. " + datums_pasakumam + ".martā.")
+    }
+    else	{
+        document.write("Popiela" + norises_vieta + " nav paredzērta " + datums_pasakumam + ".martā.")
+    }
+    </script>
+
+<br>
+------------------------
+<br>
+
+    <script>
+    let norises_vieta2 = ", Āgenskalna Valsts ģimnāzija,";
+    let datums_pasakumam2 = 24;
+
+    if ( datums_pasakumam == 23)
+    {
+        document.write("Skolēnu balle" + norises_vieta2 + " norisinājās š.g. " + datums_pasakumam2 + ".februārī.")
+    }
+    else	{
+        document.write("Skolēnu balle" + norises_vieta2 + " nenorisinājās š.g. " + datums_pasakumam2 + ".februārī.")
+    }
+    </script>
+
+<br>
+------------------------
+<br>
+
+<script>
+  
+let laiks = 14;
+let dienas_daļa;
+
+if (laiks >= 0 && laiks < 6) {
+  dienas_daļa = "nakts";
+} else if (laiks >= 6 && laiks < 12) {
+  dienas_daļa = "rīts";
+} else if (laiks >= 12 && laiks < 18) {
+  dienas_daļa = "pēcpusdiena";
+} else if (laiks >= 18 && laiks < 24) {
+  dienas_daļa = "vakars";
+}
+
+document.write("Pulkstenis ir " + laiks + ".00, tātad ir " + dienas_daļa + ".");
+
+    </script>
+
+<br>
+------------------------
+<br>
+
+<script>
+let mēnesis = "Janvāris";
+let gadalaiks;
+
+if (mēnesis == "Janvāris" || mēnesis == "Februāris" || mēnesis == "Marts") {
+gadalaiks = "ziemas";
+} else if (mēnesis == "Aprīlis" || mēnesis == "Maijs" || mēnesis == "Jūnijs") {
+gadalaiks = "pavasara";
+} else if (mēnesis == "Jūlijs" || mēnesis == "Augusts" || mēnesis == "Septembris") {
+gadalaiks = "vasaras";
+} else if (mēnesis == "Oktobris" || mēnesis == "Novembris" || mēnesis == "Decembris") 
+gadalaiks = "rudens";
+
+
+document.write( mēnesis + " ir " + gadalaiks + " mēnesis.");
+</script>
+
+<br>
+------------------------
+<br>
+
+<script>
+  
+    let mitrma_procents = 100;
+    let laikapstākļi;
+    
+    if (mitrma_procents >= 0 && mitrma_procents < 30) {
+        laikapstākļi = "ir saulains laiks";
+    } else if (mitrma_procents >= 30 && mitrma_procents < 70) {
+        laikapstākļi = "ir iespējams lietus";
+    } else if (mitrma_procents >= 70 && mitrma_procents <= 100) {
+        laikapstākļi = "noteikti ir lietains";
+    }
+    
+    document.write("Ārpus telpām " + laikapstākļi + ".");
+    
+        </script>
+
+    
+
+</div>
+
+</body>
+</html>
