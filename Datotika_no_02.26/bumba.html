@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+        </script>
+<style>
+body{
+    background-image: url('https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLWxpa2VkfDEwfHx8ZW58MHx8fHx8'); 
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+#bumba 
+{
+	width: 40px;
+    height: 40px;
+    background: rgb(0, 255, 13);
+    border-radius: 25px;
+    box-shadow: inset -10px -10px 10px rgba(255, 0, 0, 0.7);
+    position: absolute;
+    left: 111px;
+    top: 111px;
+}
+#bumba1
+{
+	width: 50px;
+    height: 50px;
+    background: rgb(225, 0, 255);
+    border-radius: 25px;
+    box-shadow: inset -10px -10px 10px rgba(49, 3, 255, 0.7);
+    position: absolute;
+    left: 110px;
+    top: 110px;
+}
+
+</style>
+<script>
+
+let x = 110;
+let y = 110;
+let atrumsy = 1;
+let atrumsx = 4;
+
+function cikls()
+{
+	$ ("#bumba").css({top: y, left: x});
+    
+    y += atrumsy;
+    
+    if (y > window.innerHeight-100)
+        atrumsy = -atrumsy;
+    else
+        atrumsy++;
+        
+    x += atrumsx;
+    
+    if (x > window.innerHeight-100)
+        atrumsx = -atrumsx;
+        
+    if (x < 0)
+        atrumsx = -atrumsx;
+}
+
+setInterval(cikls, 30);
+
+let x1 = 110;
+let y1 = 120;
+let atrumsy1 = 7;
+let atrumsx1 = 10;
+
+function cikls1()
+{
+	$ ("#bumba1").css({top: y1, left: x1});
+    
+    y1 += atrumsy1;
+    
+    if (y1 > window.innerHeight-100)
+        atrumsy1 = -atrumsy1;
+    else
+        atrumsy1++;
+        
+    x1 += atrumsx1;
+    
+    if (x1 > window.innerHeight-100)
+        atrumsx1 = -atrumsx1;
+        
+    if (x1 < 0)
+        atrumsx1 = -atrumsx1;
+}
+
+setInterval(cikls1, 19);
+</script>
+</head>
+<body>
+
+    <u><p style="text-align: right; padding-right: 10%;">8.aprīlī</p></u>
+  <h1 style="text-align: center;"> JavaScript programmēšana- Kustīgas bumbiņas </h1>
+
+
+<div id="bumba"></div>
+<div id="bumba1"></div>
+
+</body>
+</html>

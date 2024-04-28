@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Spēle " Trīs rindā "</title>
+    </head>
+    <body>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+                background-image: url('https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLWxpa2VkfDEwfHx8ZW58MHx8fHx8'); 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+            hr {
+                width: 500px;
+                height: 2px;
+                background-color: rgb(10, 255, 22);
+            }
+
+
+            #board {
+                width: 450px;
+                height: 450px;
+                margin: 0 auto;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .tile {
+                width: 147px;
+                height: 147px;
+                font-size: 150px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .winner {
+                background-color: rgb(255, 0, 0);
+                color: rgb(38, 0, 255);
+            }
+
+            .horizontal-line {
+                border-bottom: 3px solid black;
+            }
+            .vertical-line{
+                border-right: 3px solid black;
+            }
+
+        </style>
+        <script>
+    var board;
+    var playerO = "O";
+    var playerX = "X";
+    var currPlayer = playerO;
+    var gameOver = false;
+
+    window.onload = function() {
+        setGame();
+    }
+
+    function setGame() {
+        board = [
+            [' ', ' ', ' '],
+            [' ', ' ', ' '],
+            [' ', ' ', ' ']
+        ]
+
+        for (let r = 0; r < 3; r++) {
+            for (let c = 0; c < 3; c++) {
+                let tile = document.createElement("div");
+                tile.id = r.toString() + "-" + c.toString();
+                tile.classList.add("tile");
+                if (r == 0 || r == 1) {
+                    tile.classList.add("horizontal-line");
+                }
+                if (c == 0 || c == 1) {
+                    tile.classList.add("vertical-line");
+                }
+                tile.innerText = "";
+                tile.addEventListener("click", setTile);
+                document.getElementById("board").appendChild(tile);
+            }
+        }
+    }
+
+    function setTile() {
+        if (gameOver) {
+            return;
+        }
+
+        let coords = this.id.split("-");
+        let r = parseInt(coords[0]);
+        let c = parseInt(coords[1]);
+
+        if (board[r][c] != ' ') {
+            return;
+        }
+
+        board[r][c] = currPlayer;
+        this.innerText = currPlayer;
+
+        if (currPlayer == playerO) {
+            currPlayer = playerX;
+        } 
+       else {
+            currPlayer = playerO;
+        }
+
+        checkWinner();
+    }
+
+    function checkWinner() {
+        
+        for (let r = 0; r < 3; r++) {
+            if (board[r][0] == board[r][1] && board[r][1] == board[r][2] && board[r][0] != ' ') {
+                for (let i = 0; i < 3; i++) {
+                    let tile = document.getElementById(r.toString() + "-" + i.toString());
+                    tile.classList.add("winner");
+                }
+                gameOver = true;
+                return;
+            }
+        }
+       
+        for (let c = 0; c < 3; c++) {
+            if (board[0][c] == board[1][c] && board[1][c] == board[2][c] && board[0][c] != ' ') {
+                for (let i = 0; i < 3; i++) {
+                    let tile = document.getElementById(i.toString() + "-" + c.toString());
+                    tile.classList.add("winner");
+                }
+                gameOver = true;
+                return;
+            }
+        }
+       
+        if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] != ' ') {
+            for (let i = 0; i < 3; i++) {
+                let tile = document.getElementById(i.toString() + "-" + i.toString());
+                tile.classList.add("winner");
+            }
+            gameOver = true;
+            return;
+        }
+    
+        if (board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[0][2] != ' ') {
+            let tile = document.getElementById("0-2");
+
+            tile.classList.add("winner");
+
+            tile = document.getElementById("1-1");
+            tile.classList.add("winner");
+
+            tile = document.getElementById("2-0");
+            tile.classList.add("winner");
+            gameOver = true;
+            return;
+        }
+
+        
+    }
+        </script>
+
+            <h1>Spēle "Trīs rindā"</h1>
+            <hr>
+            <br>
+            <div id="board">
+                </div>
+
+    </body>
+</html>
